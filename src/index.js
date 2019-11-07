@@ -8,23 +8,19 @@ class Board extends React.Component {
     }
     
     render() {
+        const list = [0,1,2]
+        const listItems = list.map((li,i)=>{
+            return (
+                <div className="board-row">
+                    {this.renderSquare(list[0] + 3*i)}
+                    {this.renderSquare(list[1] + 3*i)}
+                    {this.renderSquare(list[2] + 3*i)}
+                </div>
+            )
+        })
         return (
             <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+                {listItems}
             </div>
         )
         
